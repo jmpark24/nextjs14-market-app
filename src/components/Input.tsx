@@ -38,6 +38,7 @@ const Input: React.FC<InputProps> = ({
           p-4
           pt-6
           font-light
+          border-2
           bg-white
           rounded-md
           outline-none
@@ -49,7 +50,7 @@ const Input: React.FC<InputProps> = ({
           ${errors[id] ? 'focus:border-rose-500' : 'focus:border-black'}
         `}
       />
-      <label htmlFor={`
+      <label className={`
         absolute
         text-md
         duration-150
