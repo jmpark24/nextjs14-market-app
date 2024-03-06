@@ -16,11 +16,11 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const userData = await getCurrentUser();
+  const currentUser = await getCurrentUser();
   return (
     <html lang="en">
       <body className={inter.className}>
-          <Navbar />
+          <Navbar currentUser={currentUser}/>
         {children}
       </body>
     </html>
