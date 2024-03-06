@@ -20,6 +20,7 @@ export default async function getCurrentUser() {
       return null;
     }
     return currentUser;
+    
   } catch (error) {
     return null;
   }

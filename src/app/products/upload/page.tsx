@@ -3,6 +3,7 @@
 import Button from '@/components/Button';
 import Container from '@/components/Container';
 import Heading from '@/components/Heading';
+import ImageUpload from '@/components/ImageUpload';
 import Input from '@/components/Input';
 import React, { useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
@@ -32,8 +33,14 @@ const ProductUploadPage = () => {
     }
   });
 
+  const imageSrc = watch('imageSrc');
+
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
 
+  }
+
+  const setCustomValue = (id: string, value: any) => {
+    setValue(id, value);
   }
 
   return (
@@ -46,6 +53,9 @@ const ProductUploadPage = () => {
           <Heading 
             title="Product Upload"
             subtitle="upload your product"
+          />
+          <ImageUpload 
+            value={imageSrc}
           />
           <Input 
             id = "title"
