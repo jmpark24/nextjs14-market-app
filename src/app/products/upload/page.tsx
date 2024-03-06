@@ -55,6 +55,7 @@ const ProductUploadPage = () => {
             subtitle="upload your product"
           />
           <ImageUpload 
+            onChange={(value) => setCustomValue('imageSrc', value)}
             value={imageSrc}
           />
           <Input 

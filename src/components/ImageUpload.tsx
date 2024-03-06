@@ -12,16 +12,16 @@ const ImageUpload = ({
   onChange,
   value
 }: ImageUploadProps) => {
-
   const handleUpload = (result: any) => {
     console.log(result);
     onChange(result.info.secure_url);
   }
+  const uploadPreset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET;
 
   return (
     <CldUploadWidget
-      onUpload={handleUpload}
-      uploadPreset={'ijijie'}
+      onSuccess={handleUpload}
+      uploadPreset={uploadPreset}
       options={{
         maxFiles: 1
       }}
