@@ -23,7 +23,7 @@ const EmptyState = ({
       flex
       flex-col
       gap-2
-      justify-content
+      justify-center
       items-center
     '>
       <Heading 

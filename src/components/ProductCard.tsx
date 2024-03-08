@@ -5,11 +5,11 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React from 'react'
 import HeartButton from './HeartButton';
-import dayjs, { fromNow } from '@/lib/dayjs';
+import { fromNow } from '@/lib/dayjs';
 
 interface ProductCardProps {
   data: Product;
-  currentUser?: User;
+  currentUser?: User | null;
 }
 
 const ProductCard = ({data, currentUser}: ProductCardProps) => {
@@ -56,4 +56,4 @@ const ProductCard = ({data, currentUser}: ProductCardProps) => {
   )
 }
 
-export default ProductCard
+export default ProductCard;
