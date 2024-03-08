@@ -40,7 +40,6 @@ const useFavorite = ({productId, currentUser} :useFavorite) => {
       toast.error('실패했습니다.')
     }
   }
-  console.log('hasFavorite',hasFavorite);
   return {
     hasFavorite,
     toggleFavorite

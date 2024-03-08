@@ -1,11 +1,12 @@
-import Image from "next/image";
 import getProducts, { ProductParams } from "../actions/getProducts";
 import Container from "@/components/Container";
 import EmptyState from "@/components/EmptyState";
 import ProductCard from "@/components/ProductCard";
-import getCurrentUser from "../actions/getCurrentUser";
+import getCurrentUser from "@/app/actions/getCurrentUser";
 import FloatingButton from "@/components/FloatingButton";
 import Categories from "@/components/categories/Categories";
+import Pagination from "@/components/Pagination";
+import { PRODUCTS_PER_PAGE } from "@/constants";
 
 interface HomeProps {
   searchParams: ProductParams
@@ -13,10 +14,14 @@ interface HomeProps {
 
 export default async function Home({searchParams}: HomeProps) {
 
+  const page = searchParams.page;
+  const pageNum = typeof page === 'string' ? Number(page) : 1;
+  console.log('pageNum', pageNum);
+  
   const products = await getProducts(searchParams);
   const currentUser = await getCurrentUser();
 
-  console.log(products);
+  // console.log(products);
 
   return (
     <Container>
@@ -40,6 +45,7 @@ export default async function Home({searchParams}: HomeProps) {
           </div>
         </>
       }
+      <Pagination page={pageNum} totalItems={products.totalItems} perPage={PRODUCTS_PER_PAGE}/>
       <FloatingButton 
         href="products/upload"
       >+</FloatingButton>
