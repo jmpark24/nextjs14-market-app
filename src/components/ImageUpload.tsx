@@ -29,7 +29,7 @@ const ImageUpload = ({
       {({open}) => {
         return (
           <div
-            onClick={() => open?.()}
+            onClick={() => open()}
             className='
               relative 
               flex 
