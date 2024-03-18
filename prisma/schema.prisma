@@ -61,7 +61,7 @@ model User {
   Products    Product[]
   userType    UserType  @default(User)
 
-  Conversation    Conversation[]
+  conversations   Conversation[]
   sentMessages    Message[]      @relation("sender")
   receivedMessage Message[]      @relation("receiver")
 }
